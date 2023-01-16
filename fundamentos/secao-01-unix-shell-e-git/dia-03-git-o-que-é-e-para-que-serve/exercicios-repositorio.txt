@@ -1,0 +1,46 @@
+1 - Crie uma pasta no seu computador;
+
+mkdir R2
+
+2 - Acesse a pasta que você acabou de criar;
+
+cd R2
+
+3 - Inicie o versionamento com o comando git init;
+
+git init
+
+4 - Abra a pasta no VSCode com o comando code .;
+
+code .
+
+5 - Crie um arquivo chamado README.md;
+
+touch README.md
+
+6  Adicione o arquivo novo em staging e realize um commit. Por exemplo: git add . e git commit -m "Descreva a alteração realizada";
+
+git add .
+
+git status
+
+git commit -m 'Adicionando arquivo README'
+
+7 - Crie uma nova branch com o comando git checkout -b. Por exemplo: git checkout -b adiciona-readme;
+
+git checkout branch -b adiciona-readme
+
+8 - Faça uma alteração no README.md e depois realize um novo commit. Por exemplo: git add . e git commit -m "Alterando o README"
+
+echo 'Treinando branches' >> README.md
+
+git add .
+
+git commit -m 'Alterando readme'
+
+9 - Retorne para a branch main, em seguida realize o merge das alterações com o comando git merge nome-da-branch. Por exemplo: git merge adiciona-readme.
+
+git checkout main
+
+git merge adiciona-readme
+

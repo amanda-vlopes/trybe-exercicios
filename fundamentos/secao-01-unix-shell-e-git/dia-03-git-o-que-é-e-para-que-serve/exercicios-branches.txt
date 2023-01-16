@@ -1,0 +1,70 @@
+1 - Acesse a branch main e crie uma branch nova chamada atualiza-readme;
+
+git checkout -b 'atualiza-readme'
+
+2 - Acesse a branch atualiza-readme e crie um arquivo chamado infos.txt;
+
+touch infos.txt
+
+3 - Adicione as alterações em staging e realize um commit;
+
+git add .
+
+git status
+
+git commit -m 'adicionando infos.txt'
+
+4 - Adicione seu nome e sobrenome no arquivo infos.txt;
+
+echo 'Amanda Lopes' >> infos.txt
+
+5 - Adicione novamente as alterações em staging e realize um commit;
+
+git add .
+
+git status
+
+git commit -m 'adicionando nome e sobrenome em infos'
+
+
+6 - Crie uma branch nova a partir da branch atualiza-readme. A nova branch deve se chamar adiciona-infos;
+
+git checkout -b adiciona-infos
+
+7 - Acesse a branch adiciona-infos e utilize sua criatividade para escrever o passo a passo de como o versionamento funciona no README.md. Por exemplo: “O primeiro passo é ter uma pasta versionada e criar um estrutura inicial e fazemos isso utilizando o comando git init. O segundo passo é criar uma branch nova com o comando git branch nome-da-branch ou git checkout -b nome-da-branch“, etc. Você também pode utilizar esse momento para escrever e responder as dúvidas que voc6e ainda tem sobre versionamento.
+
+cat >> README.md
+
+Como fazer um versionamento?
+Primeiro crie uma pasta para ser seu repositório
+Depois digite o comando 'git init' para criar um repositório git 
+Faça alguma modificação inicial para poder criar novas branches e fazer o versionamento do seu projeto
+Feito a primeira modificação digite o comando 'git add .' para adicionar as modificações ao stage
+Então, digite o comando 'git status' para verificar quais alterações irão para o próximo commit, e crie um check point do seu projeto
+Se estiver tudo certo digite o comando 'git commit -m 'Descreva sua alteração' e coloque em poucas palavras a modificação que foi feita para aparecer na time line e te lembrar do que foi feito
+Após isso é possível criar novas branches a partir do comando 'git checkout -b nome-nova-branch'
+E então fazer alterações sem comprometer a versão original do seu projeto
+Para adicionar as alterações da nova branch na branch principal - chamada de branch main - use o comando git merge dentro da branch main
+
+
+
+8 - Adicione as alterações em staging, realize o commit;
+
+git add .
+
+git status
+
+git commit -m 'adicionando passo a passo versioamento'
+
+9 - Volte para a branch atualiza-readme e realize o merge das alterações feitas na branch adiciona-infos;
+
+git checkout atualizando-readme
+
+git merge adiciona-infos
+
+10 - Retorne para a branch main e realize o merge das alterações.
+
+git checkout main
+
+git merge atualizando-readme
+
