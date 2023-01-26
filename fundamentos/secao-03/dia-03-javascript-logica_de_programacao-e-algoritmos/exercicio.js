@@ -52,9 +52,9 @@ for (index = 0; index <array.length; index += 1) {
 
 let maiorNumeroPrimo = 0;
 
-for (let numero = 2; numero <= 50; numero += 1) {
+for (let numero = 50; numero >= 2; numero -= 1) {
     let numeroPrimo = true;
-    for (let numeroDivisor = 2; numeroDivisor < numero; numeroDivisor += 1) {
+    for (let numeroDivisor = 50; numeroDivisor < numero; numeroDivisor -= 1) {
         if (numero % numeroDivisor === 0) {
             numeroPrimo = false;
         } 
@@ -63,19 +63,31 @@ for (let numero = 2; numero <= 50; numero += 1) {
         maiorNumeroPrimo = numero;
     }
 }
-// console.log(maiorNumeroPrimo);
+console.log(maiorNumeroPrimo);
 
 
-let n = 6;
-let simbolo = "*";
-let linha = '';
+// let n = 6;
+// let simbolo = "*";
+// let linha = '';
 
-for (let index = 0; index < n; index += 1) {
-    linha += simbolo;
-}
-for (let index = 0; index < n; index +=1) {
-    console.log (linha);
-}
+// for (let index = 0; index < n; index += 1) {
+//     linha += simbolo;
+// }
+// for (let index = 0; index < n; index +=1) {
+//     console.log (linha);
+// }
+
+
+
+// let n = 5;
+// let simbolo = "*";
+// let linha = '';
+
+// for (let index = 0; index <= n; index += 1) {
+//     console.log (linha);
+//     linha += simbolo;
+// }
+
 
 
 
