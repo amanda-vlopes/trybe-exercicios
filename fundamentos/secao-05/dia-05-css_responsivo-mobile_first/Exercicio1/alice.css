@@ -1,0 +1,115 @@
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header-container {
+  background-image: url('https://img.myloview.com.br/posters/alice-no-pais-das-maravilhas-jogando-cartas-relogio-de-bolso-chave-copo-e-veneno-caindo-no-buraco-do-coelho-fundo-do-vetor-banner-horizontal-700-99508528.jpg');
+  background-size: 100%;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  box-shadow: 3px 3px 8px rgb(61, 61, 61);
+}
+
+.header-container p {
+  background-color: rgb(255,255,255, .4);
+  height: 40px;
+  width: 180px;
+  box-shadow: 1px 1px 15px white;
+  border-radius: 20px;
+  font-family: 'Rye', cursive;
+  margin: 20px 6%;
+  color: rgb(46, 46, 46);
+}
+
+#nav {
+  list-style: none;
+  color: antiquewhite;
+  display: flex;
+  gap: 10px;
+  font-size: 60%;
+  font-weight: 5px;
+  margin-right: 20px;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.aside-one {
+  margin-top: 120px;
+  font-size: 12px;
+  margin-left: 20px 10%;
+  /* background-color: rgba(85, 233, 149, 0.2); */
+}
+
+.aside-one h2 {
+  font-size: 18px;
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+.aside-one ul {
+  list-style: none;
+}
+
+ hr {
+  width: 150px;
+  margin-left: 30px;
+  border: 0;
+  background-color: rgb(143, 142, 142);
+  height: .5px;
+}
+
+.aside-two {
+  font-size: 12px;
+  margin-left: 20px 10%;
+}
+
+.aside-two h2 {
+  font-size: 18px;
+  margin-left: 30px;
+  margin-bottom: 0;
+}
+
+.aside-two ul {
+  list-style: none;
+}
+
+.main-content {
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.main-content h1 {
+  font-size: 15px;
+}
+
+.main-content hr {
+  width: 300px;
+  margin-left: 5px;
+}
+
+.main-content p {
+  text-align: justify;
+  max-width: 90%;
+}
+
+.footer-container {
+  font-size: 12px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
