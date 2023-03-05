@@ -52,18 +52,50 @@ const danoWarrior = (warrior) => {
 // O dano será um número aleatório entre o valor do atributo intelligence (dano mínimo) e o valor de intelligence * 2 (dano máximo).
 // A mana consumida por turno é 15. Além disso, a função deve ter uma condicional: caso o mago tenha menos de 15 de mana, o valor de dano recebe uma mensagem (Ex: “Não possui mana suficiente”), e a mana gasta é 0.
 
-const consumoDano = (mage) => {
+const mageDano = (mage) => {
   const danoMin = mage.intelligence;
   const danoMax = danoMin * 2;
   let mageDamage = Math.floor(Math.random() * (danoMax - danoMin) + danoMin);
   let manaMage = mage.mana;
-  if (manaMage < 15) {
-    mageDamage = 'Nao possui mana suficiente';
-  } else if (manaMage > 15) {
-    manaMage -= 15;
+  const manaConsumo = {
+    gastoMana: 0,
+    damage: 'Nao possui mana suficiente',
   }
-  const danoConsumido = { mana: manaMage, damage: mageDamage};
-  return danoConsumido;
+  if (manaMage > 15) {
+    manaConsumo.gastoMana = 15;
+    manaConsumo.damage = mageDamage;
+    return manaConsumo
+  }
+  return manaConsumo;
 }
 
-console.log(consumoDano(mage));
+// Parte II
+// Agora que você já possui a implementação das funções relativas aos três exercícios anteriores, passe-as como parâmetro para outras funções que irão compor um objeto gameActions. O objeto será composto por ações do jogo, e cada ação é por definição uma HOF, pois, nesse caso, são funções que recebem como parâmetro outra função.
+
+const gameActions = {
+  warriorTurn: (danoWarrior) => {
+    const warriorDamage = danoWarrior(warrior);
+    dragon.healthPoints -= warriorDamage;
+    warrior.damage = warriorDamage;
+  },
+  mageTurn: (mageDano) => {
+    const mageTurnStats = mageDano(mage);
+    const mageDamage = mageTurnStats.damage;
+    mage.mana -= mageTurnStats.gastoMana;
+    dragon.healthPoints -= mageDamage;
+    mage.damage = mageDamage;
+  },
+  dragonTurn: (danoDragao) => {
+    const dragonDamage = danoDragao(dragon);
+    mage.healthPoints -= dragonDamage;
+    warrior.healthPoints -= dragonDamage;
+    dragon.damage = dragonDamage;
+  },
+  turnResults: () => battleMembers,
+};
+
+gameActions.warriorTurn(danoWarrior);
+gameActions.mageTurn(mageDano);
+gameActions.dragonTurn(danoDragao);
+console.log(gameActions.turnResults());
+
